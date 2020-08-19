@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using SoapCore;
+using SoapCore.Extensibility;
 using WebSoap.Models;
 
 namespace WebSoap
@@ -20,6 +21,7 @@ namespace WebSoap
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<IMessageInspector, RequestContentHandler>();
             services.TryAddSingleton<IShoppingService, ShoppingService>();
             services.AddMvc();
         }
