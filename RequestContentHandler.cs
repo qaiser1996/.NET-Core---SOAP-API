@@ -20,7 +20,7 @@ namespace WebSoap
         public void BeforeSendReply(ref Message reply, object correlationState)
         {
             // Add Header
-            reply.Headers.Add(MessageHeader.CreateHeader("ack", "", "Working"));
+            reply.Headers.Add(MessageHeader.CreateHeader("ack", "", "Header Working"));
         }
     }
 }
