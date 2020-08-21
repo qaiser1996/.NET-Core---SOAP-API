@@ -23,6 +23,7 @@ namespace WebSoap
         {
             services.AddSingleton<IMessageInspector, RequestContentHandler>();
             services.TryAddSingleton<IShoppingService, ShoppingService>();
+            services.AddSoapServiceOperationTuner(new TunerService());
             services.AddMvc();
         }
 
